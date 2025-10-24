@@ -8,7 +8,18 @@ This repository contains the complete decompilation of SwissArmySuite.exe, a com
 SAS/
 ├── SwissArmySuite.exe          # Original executable (8.1 MB)
 ├── config.json                 # Application configuration
-├── Src/                        # ✨ Organized source code (NEW)
+├── 🚀 src/                     # ✨ NEW: Runnable Rust implementation
+│   ├── main.rs                # Main entry point with CLI menu
+│   ├── config.rs              # Configuration structures
+│   └── modules/               # Feature modules
+│       ├── parser.rs          # Web parser/crawler
+│       ├── vuln_scanner.rs    # Vulnerability scanner
+│       ├── keyword_generator.rs # Keyword research
+│       ├── dork_generator.rs  # Dork generation
+│       └── dork_checker.rs    # Dork validation
+├── Cargo.toml                  # Rust project configuration
+├── RUST_IMPLEMENTATION.md      # 📖 Rust implementation guide
+├── Src/                        # ✨ Organized source code
 │   ├── assembly/              # Complete assembly code
 │   ├── analysis/              # Analysis results and extracted data
 │   ├── documentation/         # Comprehensive documentation
@@ -20,7 +31,16 @@ SAS/
 
 ## 🎯 Quick Start
 
-### New Users - Start Here!
+### 🚀 **NEW: Runnable Rust Implementation**
+The decompiled assembly code has been **converted to runnable Rust source code**!
+
+1. **Run It**: [`RUST_IMPLEMENTATION.md`](RUST_IMPLEMENTATION.md) - Complete guide to building and running
+2. **Build**: `cargo build --release` - Compile the Rust implementation
+3. **Execute**: `./target/release/swiss-army-suite` - Run the application
+
+### 📚 Understanding the Decompilation
+
+#### New Users - Start Here!
 The **`Src/`** directory contains a well-organized structure of all decompiled code and analysis:
 
 1. **Read First**: [`Src/README.md`](Src/README.md) - Complete overview and guide
@@ -29,7 +49,7 @@ The **`Src/`** directory contains a well-organized structure of all decompiled c
 4. **API Usage**: [`Src/metadata/imports.txt`](Src/metadata/imports.txt) - Windows APIs used
 5. **Documentation**: [`Src/documentation/`](Src/documentation/) - Detailed methodology and reports
 
-### For Existing Users
+#### For Existing Users
 The original **`decompiled/`** directory remains unchanged for backward compatibility.
 
 ## 📊 Decompilation Status: ✅ 100% COMPLETE
