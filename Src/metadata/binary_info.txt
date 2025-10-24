@@ -1,0 +1,43 @@
+fd       3
+file     SwissArmySuite.exe
+size     0x823000
+humansz  8.1M
+minopsz  1
+maxopsz  16
+invopsz  1
+mode     r-x
+format   pe64
+iorw     false
+block    0x100
+type     EXEC (Executable file)
+arch     x86
+baddr    0x140000000
+binsz    8531968
+bintype  pe
+bits     64
+canary   false
+retguard false
+class    PE32+
+cmp.csum 0x0082d2f3
+compiled Tue Mar 19 18:07:45 2024
+crypto   false
+endian   little
+havecode true
+hdr.csum 0x00000000
+laddr    0x0
+lang     c
+linenum  false
+lsyms    false
+machine  AMD 64
+nx       true
+os       windows
+overlay  false
+cc       ms
+pic      true
+relocs   false
+signed   false
+sanitize false
+static   false
+stripped false
+subsys   Windows CUI
+va       true
