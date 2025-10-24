@@ -1,249 +1,186 @@
-# SwissArmySuite - Source Code Organization
+# SwissArmySuite (SAS) - Rust Source Code
 
-This repository contains the complete decompilation of SwissArmySuite.exe, a comprehensive security and web research toolkit built in Rust.
-
-## ✅ Verification Status: exe and Rust Code are 100% Identical
-
-**Latest Verification**: October 24, 2025 - **COMPLETE**
-
-Both the SwissArmySuite.exe Windows executable and the Rust source code implementation have been **comprehensively verified to be functionally identical** through multi-tool decompilation and analysis.
-
-📄 **Quick Links**:
-- [FINAL_VERIFICATION_SUMMARY.md](FINAL_VERIFICATION_SUMMARY.md) - Executive summary with final verdict
-- [COMPREHENSIVE_VERIFICATION.md](COMPREHENSIVE_VERIFICATION.md) - Detailed technical analysis
-- [CODE_MAPPING_VERIFICATION.md](CODE_MAPPING_VERIFICATION.md) - Line-by-line code mapping
-- [VERIFICATION_GUIDE.md](VERIFICATION_GUIDE.md) - How to understand the verification
-
-**Result**: ✅ Front-End: 100% identical | ✅ Back-End: 100% identical | ✅ Everything: Verified
+A comprehensive security and web research toolkit built in Rust.
 
 ## 📁 Repository Structure
 
 ```
 SAS/
-├── SwissArmySuite.exe          # Original executable (8.1 MB)
-├── config.json                 # Application configuration
-├── 🚀 src/                     # ✨ NEW: Runnable Rust implementation
-│   ├── main.rs                # Main entry point with CLI menu
-│   ├── config.rs              # Configuration structures
-│   └── modules/               # Feature modules
-│       ├── parser.rs          # Web parser/crawler
-│       ├── vuln_scanner.rs    # Vulnerability scanner
+├── src/                     # Rust source code
+│   ├── main.rs             # Main entry point with CLI menu
+│   ├── config.rs           # Configuration structures
+│   └── modules/            # Feature modules
+│       ├── parser.rs       # Web parser/crawler
+│       ├── vuln_scanner.rs # Vulnerability scanner
 │       ├── keyword_generator.rs # Keyword research
-│       ├── dork_generator.rs  # Dork generation
-│       └── dork_checker.rs    # Dork validation
-├── Cargo.toml                  # Rust project configuration
-├── RUST_IMPLEMENTATION.md      # 📖 Rust implementation guide
-├── Src/                        # ✨ Organized source code
-│   ├── assembly/              # Complete assembly code
-│   ├── analysis/              # Analysis results and extracted data
-│   ├── documentation/         # Comprehensive documentation
-│   └── metadata/              # Binary metadata and structure info
-├── decompiled/                # Raw decompilation artifacts (original)
-├── DECOMPILATION_COMPLETE.md  # Decompilation status report
-└── SECURITY_SUMMARY.md        # Security analysis summary
+│       ├── dork_generator.rs    # Dork generation
+│       └── dork_checker.rs      # Dork validation
+├── Cargo.toml              # Rust project configuration
+├── config.json             # Application configuration
+└── README.md               # This file
 ```
 
 ## 🎯 Quick Start
 
-### 🚀 **NEW: Runnable Rust Implementation**
-The decompiled assembly code has been **converted to runnable Rust source code**!
+### Prerequisites
+- Rust 1.70+ (2021 edition)
+- Cargo (included with Rust)
 
-1. **Run It**: [`RUST_IMPLEMENTATION.md`](RUST_IMPLEMENTATION.md) - Complete guide to building and running
-2. **Build**: `cargo build --release` - Compile the Rust implementation
-3. **Execute**: `./target/release/swiss-army-suite` - Run the application
+### Build
+```bash
+# Development build
+cargo build
 
-### 📚 Understanding the Decompilation
+# Release build (optimized)
+cargo build --release
+```
 
-#### New Users - Start Here!
-The **`Src/`** directory contains a well-organized structure of all decompiled code and analysis:
+### Run
+```bash
+# Run with cargo
+cargo run --release
 
-1. **Read First**: [`Src/README.md`](Src/README.md) - Complete overview and guide
-2. **Understand the Code**: [`Src/assembly/`](Src/assembly/) - All assembly code
-3. **Explore Functionality**: [`Src/analysis/strings.txt`](Src/analysis/strings.txt) - Extracted strings reveal features
-4. **API Usage**: [`Src/metadata/imports.txt`](Src/metadata/imports.txt) - Windows APIs used
-5. **Documentation**: [`Src/documentation/`](Src/documentation/) - Detailed methodology and reports
+# Or run the compiled executable
+./target/release/swiss-army-suite
+```
 
-#### For Existing Users
-The original **`decompiled/`** directory remains unchanged for backward compatibility.
 
-## 📊 Decompilation Status: ✅ 100% COMPLETE
+## 🔍 Features
 
-### What's Included
-- ✅ **1,555,083 lines** of x86-64 assembly code
-- ✅ **102,113 strings** extracted from the binary
-- ✅ **228 Windows API imports** identified
-- ✅ **Complete PE structure** analysis (257,191 lines)
-- ✅ **Full documentation** with methodology and usage guides
-- ✅ **Security analysis** and feature identification
+SwissArmySuite is a security research and web scraping toolkit that includes:
 
-### Binary Information
-- **Type**: PE32+ (64-bit Windows Executable)
-- **Architecture**: x86-64 (AMD64)
-- **Platform**: Windows Console Application
-- **Size**: 8,531,968 bytes (8.1 MB)
-- **Language**: Rust
-- **Build Date**: March 19, 2024
-
-## 🔍 What is SwissArmySuite?
-
-Based on the decompilation analysis, SwissArmySuite is a security research and web scraping toolkit that includes:
-
-1. **Web Parser/Crawler** - Multi-threaded web scraping with search engine support
+1. **Web Parser/Crawler** - Multi-threaded web scraping with search engine support (Google, Yahoo, Bing, Ask, Yandex, DuckDuckGo, Brave)
 2. **Vulnerability Scanner** - Network security scanning capabilities
 3. **Keyword Research Tool** - Multi-engine keyword extraction
 4. **Google Dork Generator** - Automated dork pattern generation
 5. **Dork Validator** - Automated dork checking and validation
 
-Configuration is managed through `config.json` with support for:
-- Multiple search engines (Google, Yahoo, Bing, Ask, Yandex, DuckDuckGo, Brave)
-- Concurrent threading (50-100 threads)
-- Timeout management
-- Anti-CAPTCHA integration
-- Domain deduplication
+## ⚙️ Configuration
 
-## 📖 Documentation
+Edit `config.json` to customize:
 
-### Primary Documentation (Organized)
-- **[Src/README.md](Src/README.md)** - Main guide for the organized source code
-- **[Src/documentation/USAGE_GUIDE.md](Src/documentation/USAGE_GUIDE.md)** - How to analyze the code
-- **[Src/documentation/DECOMPILATION_METHODOLOGY.md](Src/documentation/DECOMPILATION_METHODOLOGY.md)** - Decompilation process
-- **[Src/documentation/decompilation_report.md](Src/documentation/decompilation_report.md)** - Detailed analysis
-
-### Status Reports
-- **[DECOMPILATION_COMPLETE.md](DECOMPILATION_COMPLETE.md)** - Verification of 100% completion
-- **[SECURITY_SUMMARY.md](SECURITY_SUMMARY.md)** - Security assessment of changes
-
-### Original Artifacts
-- **[decompiled/](decompiled/)** - Original raw decompilation output (maintained for compatibility)
-
-## 🛠️ Tools Used
-
-Professional reverse engineering tools used for decompilation:
-- **objdump** (GNU Binary Utilities) - Complete disassembly
-- **radare2** v5.5.0 - Binary analysis and function identification
-- **strings** (GNU coreutils) - Text extraction
-
-These are industry-standard tools used by security researchers, malware analysts, and software engineers worldwide.
-
-## 🔐 Security Features
-
-### Analyzed Security Features (Original Binary)
-- ✅ NX (No-Execute) protection enabled
-- ✅ PIE (Position Independent Executable) - ASLR compatible
-- ✅ Modern Windows security features
-- ❌ Stack canary protection not present
-- ✅ Rust memory safety guarantees
-
-### Repository Security
-All files in this repository are:
-- ✅ Non-executable text/documentation files
-- ✅ Static analysis artifacts (assembly, strings, metadata)
-- ✅ No security vulnerabilities introduced
-- ✅ Safe to browse and analyze
-
-## 🎓 How to Use This Repository
-
-### For Code Analysis
-```bash
-# Explore the organized structure
-cd Src/
-
-# View the main function
-cat assembly/main_function.asm
-
-# Search for specific functionality
-grep -i "http\|url" analysis/strings.txt
-
-# Check Windows API usage
-cat metadata/imports.txt
+```json
+{
+  "parser": {
+    "threads": 50,
+    "pages": 10,
+    "timeouts": 60,
+    "domain_dedupe": true,
+    "google": true,
+    "yahoo": true,
+    ...
+  },
+  "vulnscanner": {
+    "threads": 100,
+    "timeouts": 30
+  },
+  ...
+}
 ```
 
-### For Security Research
-```bash
-# Look for cryptographic operations
-grep -i "crypt\|random" Src/assembly/disassembly.asm
+## 💻 Usage
 
-# Find network operations
-grep -i "socket\|connect" Src/analysis/strings.txt
+The application provides an interactive menu:
 
-# Analyze API calls
-cat Src/metadata/imports.txt
+```
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║              Swiss Army Suite (SAS)                       ║
+║        Security and Web Research Toolkit                  ║
+║                                                           ║
+║                    Version 1.0.0                          ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+═══════════ MAIN MENU ═══════════
+1. Web Parser/Crawler
+2. Vulnerability Scanner
+3. Keyword Generator
+4. Dork Generator
+5. Dork Checker/Validator
+6. Exit
+═════════════════════════════════
+
+Enter your choice:
 ```
 
-### For Understanding Program Logic
-1. Start with [`Src/README.md`](Src/README.md)
-2. Read [`Src/documentation/decompilation_report.md`](Src/documentation/decompilation_report.md)
-3. Review [`Src/analysis/analysis_summary.txt`](Src/analysis/analysis_summary.txt)
-4. Examine [`Src/assembly/main_function.asm`](Src/assembly/main_function.asm)
-5. Explore [`Src/assembly/disassembly.asm`](Src/assembly/disassembly.asm) for details
+### Example Usage
 
-## 📊 File Statistics
+**Web Parser:**
+```bash
+Enter your choice: 1
+Enter search query: site:example.com
+# Searches across multiple search engines
+```
 
-### Assembly Code
-- **disassembly.asm**: 1,555,083 lines (81 MB) - Complete disassembly
-- **main_function.asm**: 19 KB - Main entry point
-- **entry_point.asm**: 915 bytes - Program startup
+**Vulnerability Scanner:**
+```bash
+Enter your choice: 2
+Enter target URLs: https://example.com,https://test.com
+# Scans for common vulnerabilities
+```
 
-### Analysis Data
-- **strings.txt**: 102,113 strings (944 KB)
-- **headers_and_sections.txt**: 257,191 lines (11 MB)
-- **analysis_summary.txt**: 8 KB
+**Keyword Generator:**
+```bash
+Enter your choice: 3
+Enter seed keyword: security
+# Generates related keywords from multiple search engines
+```
 
-### Metadata
-- **imports.txt**: 228 Windows API functions (13 KB)
-- **exports.txt**: 4 exported functions (169 bytes)
-- **binary_info.txt**: Complete binary metadata (685 bytes)
+**Dork Generator:**
+```bash
+Enter your choice: 4
+Enter keywords: password,login
+Enter file types: pdf,doc
+Enter domains: .com,.org
+# Generates Google dorks based on patterns
+```
 
-### Documentation
-- **4 comprehensive guides** (30+ KB total)
-- **Methodology, usage, and analysis reports**
+**Dork Checker:**
+```bash
+Enter your choice: 5
+Enter dorks to check: inurl:admin,site:edu login
+# Validates dorks by checking result counts
+```
 
-## 🎯 Completeness Guarantee
+## 🛠️ Development
 
-This represents **100% complete decompilation** at the binary level:
-- Every instruction in the executable has been disassembled
-- Every string has been extracted
-- Every API call has been identified
-- Every section has been analyzed
-- Complete PE structure has been documented
+### Dependencies
 
-**No further decompilation is possible** without access to the original source code, as all binary information has been extracted.
+The project uses the following Rust crates:
+- **tokio** - Async runtime
+- **reqwest** - HTTP client
+- **serde/serde_json** - JSON handling
+- **clap** - CLI argument parsing
+- **colored** - Terminal colors
+- **scraper** - HTML parsing
+- **regex** - Pattern matching
+- **anyhow** - Error handling
 
-## ⚖️ Legal Notice
+### Testing
 
-This decompilation was performed using:
-- ✅ Open-source tools (freely available)
-- ✅ Standard reverse engineering practices
-- ✅ Legitimate analysis techniques
-- ✅ No DRM circumvention
-- ✅ No license violations
+```bash
+# Run tests
+cargo test
 
-The techniques and tools used are employed globally by:
-- Security researchers
-- Malware analysts
-- Software developers
-- Academic researchers
-- Government security agencies
+# Check code
+cargo check
 
-## 🤝 Contributing
+# Format code
+cargo fmt
 
-This repository contains static analysis artifacts. If you find ways to improve the documentation or organization, contributions are welcome.
+# Run linter
+cargo clippy
+```
 
-## 📞 Support
+## 📝 License
 
-For questions or additional information:
-- Review the comprehensive documentation in [`Src/documentation/`](Src/documentation/)
-- Check the [`Src/README.md`](Src/README.md) for detailed guidance
-- Consult [`DECOMPILATION_COMPLETE.md`](DECOMPILATION_COMPLETE.md) for verification details
+This is a security research and web scraping toolkit.
 
 ---
 
-**Decompilation Status**: ✅ **100% COMPLETE**  
-**Quality**: Professional-grade using industry-standard tools  
-**Organization**: Fully structured in [`Src/`](Src/) directory  
-**Documentation**: Comprehensive guides included  
+**Status**: ✅ Clean Rust Implementation
+**Platform**: Cross-platform (Linux, macOS, Windows)
 
----
+*Last Updated: October 24, 2025*
 
-*Last Updated: October 24, 2025*  
-*Decompilation completed using objdump, radare2, and strings*
